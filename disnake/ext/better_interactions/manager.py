@@ -43,9 +43,13 @@ class InjectedBotBase(CommonBotBase):
     """A semi-stub class for type hinting."""
 
     better_interactions: "InteractionsManager"
+    """The interactions manager for the bot."""
 
-    def component_callback(self, *custom_id: str | re.Pattern) -> Callable[[AsyncCallable], InteractionCallback]: ...
-    def modal_callback(self, *custom_id: str | re.Pattern) -> Callable[[AsyncCallable], InteractionCallback]: ...
+    def component_callback(self, *custom_id: str | re.Pattern) -> Callable[[AsyncCallable], InteractionCallback]:
+        """Listen for a component interaction with the specified custom ID."""
+
+    def modal_callback(self, *custom_id: str | re.Pattern) -> Callable[[AsyncCallable], InteractionCallback]:
+        """Listen for a modal interaction with the specified custom ID."""
 
 
 class InteractionsManager:

@@ -1,3 +1,4 @@
+# pylint: disable=invalid-name, protected-access
 """
 MIT License
 
@@ -39,20 +40,20 @@ _Cog_eject = Cog._eject
 
 def _patched_Cog__new__(cls, *args, **kwargs):
     self = _Cog__new__(cls, *args, **kwargs)
-    _interaction_callbacks = {}
+    interaction_callbacks = {}
     for base in reversed(cls.__mro__):
         for elem, value in base.__dict__.items():
-            if elem in _interaction_callbacks:
-                del _interaction_callbacks[elem]
+            if elem in interaction_callbacks:
+                del interaction_callbacks[elem]
 
             if isinstance(value, InteractionCallback):
-                _interaction_callbacks[elem] = value.name
+                interaction_callbacks[elem] = value.name
                 value.callback = partial(value.callback, self)
                 if value.name.startswith("ModalCallback::"):
                     args[0].better_interactions.add_modal_callback(value)
                 elif value.name.startswith("ComponentCallback::"):
                     args[0].better_interactions.add_component_callback(value)
-    self._interaction_callbacks = list(_interaction_callbacks.values())
+    self._interaction_callbacks = list(interaction_callbacks.values())
     return self
 
 
