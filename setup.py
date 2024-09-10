@@ -33,7 +33,7 @@ setup(
     version=VERSION,
     author="ItsRqtl",
     author_email="itsrqtl@gmail.com",
-    description="An extension for disnake to make interactions easier.",
+    description="i.py-like interaction callbacks for disnake.",
     long_description=(Path(__file__).parent / "README.md").read_text(),
     long_description_content_type="text/markdown",
     license="MIT",
