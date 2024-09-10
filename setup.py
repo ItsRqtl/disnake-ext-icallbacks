@@ -29,7 +29,7 @@ from setuptools import setup
 VERSION = "v0.0.1"
 
 setup(
-    name="disnake-better-interactions",
+    name="disnake-ext-icallbacks",
     version=VERSION,
     author="ItsRqtl",
     author_email="itsrqtl@gmail.com",
@@ -45,7 +45,11 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
-    packages=["disnake.ext.better_interactions"],
-    install_requires=["disnake"],
+    packages=["disnake.ext.icallbacks"],
+    install_requires=[(Path(__file__).parent / "requirements.txt").read_text().splitlines()],
     python_requires=">=3.8",
+    url="https://github.com/ItsRqtl/disnake-ext-icallbacks",
+    project_urls={
+        "Source": "https://github.com/ItsRqtl/disnake-ext-icallbacks",
+    },
 )
