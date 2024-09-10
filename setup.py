@@ -46,7 +46,7 @@ setup(
         "Programming Language :: Python :: 3.8",
     ],
     packages=["disnake.ext.icallbacks"],
-    install_requires=[(Path(__file__).parent / "requirements.txt").read_text().splitlines()],
+    install_requires=["disnake"],
     python_requires=">=3.8",
     url="https://github.com/ItsRqtl/disnake-ext-icallbacks",
     project_urls={
