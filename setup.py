@@ -26,7 +26,7 @@ from pathlib import Path
 
 from setuptools import setup
 
-VERSION = "1.0.0"
+VERSION = "v0.0.1"
 
 setup(
     name="disnake-better-interactions",
