@@ -26,7 +26,7 @@ from pathlib import Path
 
 from setuptools import setup
 
-VERSION = "v0.0.1"
+VERSION = "v1.0.0"
 
 setup(
     name="disnake-ext-icallbacks",
