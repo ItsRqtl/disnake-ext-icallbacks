@@ -77,7 +77,7 @@ async def modal(self, inter: disnake.ApplicationCommandInteraction):
     )
 
 @bot.modal_callback("modal_custom_id")
-async def on_modal_submit(inter: disnake.MessageInteraction):
+async def on_modal_submit(inter: disnake.ModalInteraction):
     await inter.send(f"Input: {inter.text_values["input1"]}")
 ```
 
@@ -86,7 +86,7 @@ or again, in a cog class:
 ```py
 class MyCog(commands.Cog):
     @icallbacks.modal_callback("modal_custom_id")
-    async def on_modal_submit(self, inter: disnake.MessageInteraction):
+    async def on_modal_submit(self, inter: disnake.ModalInteraction):
         await inter.send(f"Input: {inter.text_values["input1"]}")
 ```
 
